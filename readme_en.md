@@ -11,29 +11,26 @@ The experiments are conducted on Atari `Assault`, including training, visualizat
 
 ```text
 .
-©À©¤©¤ readme.md
-©À©¤©¤ readme_en.md
-©À©¤©¤ requirements.txt
-©À©¤©¤ models/
-©¦   ©À©¤©¤ dqn/                  # DQN checkpoints
-©¦   ©¸©¤©¤ a2c/                  # A2C checkpoints
-©À©¤©¤ scripts/
-©¦   ©À©¤©¤ train_DQN.ipynb       # Train DQN
-©¦   ©À©¤©¤ train_A2C.ipynb       # Train A2C
-©¦   ©À©¤©¤ play_DQN.ipynb        # Play with trained DQN
-©¦   ©¸©¤©¤ play_A2C.ipynb        # Play with trained A2C
-©À©¤©¤ play_demonstration/
-©¦   ©À©¤©¤ demonstration_dqn.mp4
-©¦   ©¸©¤©¤ demonstration_a2c.mp4
-©À©¤©¤ report/
-©¦   ©À©¤©¤ main.pdf
-©¦   ©¸©¤©¤ images/
-©¦       ©À©¤©¤ reward_dqn.png
-©¦       ©¸©¤©¤ reward_a2c.png
-©À©¤©¤ resource/
-©¦   ©À©¤©¤ DQN.pdf
-©¦   ©¸©¤©¤ A3C.pdf
-©¸©¤©¤ task_description.pdf
+å¿µå²¸å²¸ readme.md
+å¿µå²¸å²¸ readme_en.md
+å¿µå²¸å²¸ requirements.txt
+å¿µå²¸å²¸ models/
+å²«   å¿µå²¸å²¸ dqn/                  # DQN checkpoints
+å²«   å¼©å²¸å²¸ a2c/                  # A2C checkpoints
+å¿µå²¸å²¸ scripts/
+å²«   å¿µå²¸å²¸ train_DQN.ipynb       # Train DQN
+å²«   å¿µå²¸å²¸ train_A2C.ipynb       # Train A2C
+å²«   å¿µå²¸å²¸ play_DQN.ipynb        # Play with trained DQN
+å²«   å¼©å²¸å²¸ play_A2C.ipynb        # Play with trained A2C
+å¿µå²¸å²¸ report/
+å²«   å¿µå²¸å²¸ main.pdf
+å²«   å¼©å²¸å²¸ images/
+å²«       å¿µå²¸å²¸ reward_dqn.png
+å²«       å¼©å²¸å²¸ reward_a2c.png
+å¿µå²¸å²¸ resource/
+å²«   å¿µå²¸å²¸ DQN.pdf
+å²«   å¼©å²¸å²¸ A3C.pdf
+å¼©å²¸å²¸ task_description.pdf
 ```
 
 ## Environment Setup
