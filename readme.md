@@ -2,7 +2,7 @@
 
 本项目复现并系统性对比了两种经典强化学习算法：
 - DQN (Deep Q-Network)
-- A2C (Advantage Actor-Critic)
+- A2C (Advantage Actor-Critic)  
 并在统一实验环境下对其收敛性进行了分析
 
 任务环境为 Atari `Assault`。项目包含训练、可视化和模型播放推理流程。
