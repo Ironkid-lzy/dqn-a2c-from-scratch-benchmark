@@ -1,123 +1,120 @@
 # Playing Atari 2600 with Reinforcement Learning
 
-±¾ÏîÄ¿ÓÃÓÚ¸´ÏÖ²¢¶Ô±ÈÁ½ÖÖ¾­µäÇ¿»¯Ñ§Ï°Ëã·¨£º
+æœ¬é¡¹ç›®ç”¨äºå¤ç°å¹¶å¯¹æ¯”ä¸¤ç§ç»å…¸å¼ºåŒ–å­¦ä¹ ç®—æ³•ï¼š
 
 - DQN (Deep Q-Network)
 - A2C (Advantage Actor-Critic)
 
-ÈÎÎñ»·¾³Îª Atari `Assault`¡£ÏîÄ¿°üº¬ÑµÁ·¡¢¿ÉÊÓ»¯ºÍÄ£ĞÍ²¥·ÅÍÆÀíÁ÷³Ì¡£
+ä»»åŠ¡ç¯å¢ƒä¸º Atari `Assault`ã€‚é¡¹ç›®åŒ…å«è®­ç»ƒã€å¯è§†åŒ–å’Œæ¨¡å‹æ’­æ”¾æ¨ç†æµç¨‹ã€‚
 
-## ÏîÄ¿½á¹¹
+## é¡¹ç›®ç»“æ„
 
 ```text
 .
-©À©¤©¤ readme.md
-©À©¤©¤ readme_en.md
-©À©¤©¤ requirements.txt          # °²×°ÒÀÀµ
-©À©¤©¤ models/
-©¦   ©À©¤©¤ dqn/                  # DQN checkpoint Êä³öÄ¿Â¼
-©¦   ©¸©¤©¤ a2c/                  # A2C checkpoint Êä³öÄ¿Â¼
-©À©¤©¤ scripts/
-©¦   ©À©¤©¤ train_DQN.ipynb       # ÑµÁ· DQN
-©¦   ©À©¤©¤ train_A2C.ipynb       # ÑµÁ· A2C
-©¦   ©À©¤©¤ play_DQN.ipynb        # ²¥·Å DQN Ğ§¹û
-©¦   ©¸©¤©¤ play_A2C.ipynb        # ²¥·Å A2C Ğ§¹û
-©À©¤©¤ play_demonstration/       # ÑİÊ¾ÊÓÆµ
-©¦   ©À©¤©¤ demonstration_dqn.mp4
-©¦   ©¸©¤©¤ demonstration_a2c.mp4
-©À©¤©¤ report/                   # ÊµÑé±¨¸æ
-©¦   ©À©¤©¤ main.pdf
-©¦   ©¸©¤©¤ images/
-©¦       ©À©¤©¤ reward_dqn.png
-©¦       ©¸©¤©¤ reward_a2c.png
-©¸©¤©¤ resource/                 # Ëã·¨ÂÛÎÄ
-    ©À©¤©¤ A3C.pdf
-    ©¸©¤©¤ DQN.pdf
+â”œâ”€â”€ readme.md
+â”œâ”€â”€ readme_en.md
+â”œâ”€â”€ requirements.txt          # å®‰è£…ä¾èµ–
+â”œâ”€â”€ models/
+â”‚   â”œâ”€â”€ dqn/                  # DQN checkpoint è¾“å‡ºç›®å½•
+â”‚   â””â”€â”€ a2c/                  # A2C checkpoint è¾“å‡ºç›®å½•
+â”œâ”€â”€ scripts/
+â”‚   â”œâ”€â”€ train_DQN.ipynb       # è®­ç»ƒ DQN
+â”‚   â”œâ”€â”€ train_A2C.ipynb       # è®­ç»ƒ A2C
+â”‚   â”œâ”€â”€ play_DQN.ipynb        # æ’­æ”¾ DQN æ•ˆæœ
+â”‚   â””â”€â”€ play_A2C.ipynb        # æ’­æ”¾ A2C æ•ˆæœ
+â”œâ”€â”€ report/                   # å®éªŒæŠ¥å‘Š
+â”‚   â”œâ”€â”€ main.pdf
+â”‚   â””â”€â”€ images/
+â”‚       â”œâ”€â”€ reward_dqn.png
+â”‚       â””â”€â”€ reward_a2c.png
+â””â”€â”€ resource/                 # ç®—æ³•è®ºæ–‡
+    â”œâ”€â”€ A3C.pdf
+    â””â”€â”€ DQN.pdf
 ```
 
-## »·¾³ÒÀÀµ
+## ç¯å¢ƒä¾èµ–
 
-½¨ÒéÊ¹ÓÃ `venv`¡£
+å»ºè®®ä½¿ç”¨ `venv`ã€‚
 
-### 1) ´´½¨²¢¼¤»îĞéÄâ»·¾³ 
+### 1) åˆ›å»ºå¹¶æ¿€æ´»è™šæ‹Ÿç¯å¢ƒ 
 
 ```
 python -m venv .venv
 source .venv/bin/activate
 ```
 
-### 2) °²×°ÒÀÀµ
+### 2) å®‰è£…ä¾èµ–
 
-ÏÈ°²×° PyTorch£¨CUDA 12.8 Ê¾Àı£¬Êµ¼ÊÇëÒÔ¹ÙÍøÃüÁîÎª×¼£©£º
+å…ˆå®‰è£… PyTorchï¼ˆCUDA 12.8 ç¤ºä¾‹ï¼Œå®é™…è¯·ä»¥å®˜ç½‘å‘½ä»¤ä¸ºå‡†ï¼‰ï¼š
 
 ```powershell
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 ```
 
-ÔÙ°²×°ÆäÓàÒÀÀµ£º
+å†å®‰è£…å…¶ä½™ä¾èµ–ï¼š
 
 ```powershell
 pip install -r requirements.txt
 ```
 
 
-## ¿ìËÙ¿ªÊ¼
+## å¿«é€Ÿå¼€å§‹
 
-ÔÚÏîÄ¿¸ùÄ¿Â¼Æô¶¯ Notebook£º
+åœ¨é¡¹ç›®æ ¹ç›®å½•å¯åŠ¨ Notebookï¼š
 
 ```powershell
 jupyter notebook
 ```
 
-½¨ÒéÖ´ĞĞË³Ğò£º
+å»ºè®®æ‰§è¡Œé¡ºåºï¼š
 
 1. `scripts/train_DQN.ipynb`
 2. `scripts/train_A2C.ipynb`
 3. `scripts/play_DQN.ipynb`
 4. `scripts/play_A2C.ipynb`
 
-## Ä£ĞÍ±£´æÓë¼ÓÔØÂ·¾¶
+## æ¨¡å‹ä¿å­˜ä¸åŠ è½½è·¯å¾„
 
-- DQN ÑµÁ·±£´æµ½£º`models/dqn`
-- A2C ÑµÁ·±£´æµ½£º`models/a2C`
-- DQN ²¥·ÅÄ¬ÈÏ¼ÓÔØ£º`models/dqn/timesteps_10000000.pt`
-- A2C ²¥·Å»áÔÚ `models/a2C` ÖĞ×Ô¶¯²éÕÒ×îĞÂ `timesteps_*.pt`
+- DQN è®­ç»ƒä¿å­˜åˆ°ï¼š`models/dqn`
+- A2C è®­ç»ƒä¿å­˜åˆ°ï¼š`models/a2C`
+- DQN æ’­æ”¾é»˜è®¤åŠ è½½ï¼š`models/dqn/timesteps_10000000.pt`
+- A2C æ’­æ”¾ä¼šåœ¨ `models/a2C` ä¸­è‡ªåŠ¨æŸ¥æ‰¾æœ€æ–° `timesteps_*.pt`
 
-## Ëã·¨ÊµÏÖÕªÒª
+## ç®—æ³•å®ç°æ‘˜è¦
 
 ### DQN
 
 - CNN Q-network
 - Replay Buffer
 - Target Network
-- epsilon-greedy Ì½Ë÷
-- ¶¨ÆÚÍ¬²½Ä¿±êÍøÂçÓë±£´æ checkpoint
+- epsilon-greedy æ¢ç´¢
+- å®šæœŸåŒæ­¥ç›®æ ‡ç½‘ç»œä¸ä¿å­˜ checkpoint
 
 ### A2C
 
-- ¹²Ïí CNN Ö÷¸É + Actor/Critic Ë«Í·
-- ²¢ĞĞ»·¾³²ÉÑù (`num_envs=16`)
+- å…±äº« CNN ä¸»å¹² + Actor/Critic åŒå¤´
+- å¹¶è¡Œç¯å¢ƒé‡‡æ · (`num_envs=16`)
 - n-step return (`n_steps=5`)
-- Advantage ±ê×¼»¯
-- ìØÕıÔòÓëÌİ¶È²Ã¼ô
+- Advantage æ ‡å‡†åŒ–
+- ç†µæ­£åˆ™ä¸æ¢¯åº¦è£å‰ª
 
-## ÑµÁ·½á¹û£¨¼òÒª£©
+## è®­ç»ƒç»“æœï¼ˆç®€è¦ï¼‰
 
-- A2C Ç°ÆÚÌáÉı¸ü¿ì£¨²¢ĞĞ²ÉÑùÍÌÍÂ¸ü¸ß£©
-- DQN ºóÆÚÆ½¾ù reward ¸ü¸ß£¨»Ø·ÅÓëÄ¿±êÍøÂçÌáÉıÎÈ¶¨ĞÔ£©
+- A2C å‰æœŸæå‡æ›´å¿«ï¼ˆå¹¶è¡Œé‡‡æ ·ååæ›´é«˜ï¼‰
+- DQN åæœŸå¹³å‡ reward æ›´é«˜ï¼ˆå›æ”¾ä¸ç›®æ ‡ç½‘ç»œæå‡ç¨³å®šæ€§ï¼‰
 
-### A2C Reward ÇúÏß
+### A2C Reward æ›²çº¿
 
 ![A2C Reward Curve](report/images/reward_a2c.png)
 
-### DQN Reward ÇúÏß
+### DQN Reward æ›²çº¿
 
 ![DQN Reward Curve](report/images/reward_dqn.png)
 
-ÍêÕû·ÖÎö¿É¼û£º`report/main.pdf`
+å®Œæ•´åˆ†æå¯è§ï¼š`report/main.pdf`
 
 
-## ²Î¿¼ÎÄÏ×
+## å‚è€ƒæ–‡çŒ®
 
 - Mnih et al., *Playing Atari with Deep Reinforcement Learning*, 2013.
 - Mnih et al., *Asynchronous Methods for Deep Reinforcement Learning*, 2016.
