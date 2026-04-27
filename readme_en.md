@@ -1,5 +1,7 @@
 # Playing Atari 2600 with Reinforcement Learning
 
+Language: English | [中文](readme.md)
+
 This project reproduced and systematically compared **Deep Q-Network (DQN)** and **Advantage Actor-Critic (A2C)** algorithms in a controlled reinforcement learning environment, analyzing convergence behavior under identical experimental settings.
 
 The experiments are conducted on Atari `Assault`, including training, visualization, and policy playback.
