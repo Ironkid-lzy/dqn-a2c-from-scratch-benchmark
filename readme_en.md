@@ -11,26 +11,25 @@ The experiments are conducted on Atari `Assault`, including training, visualizat
 
 ```text
 .
-念岸岸 readme.md
-念岸岸 readme_en.md
-念岸岸 requirements.txt
-念岸岸 models/
-岫   念岸岸 dqn/                  # DQN checkpoints
-岫   弩岸岸 a2c/                  # A2C checkpoints
-念岸岸 scripts/
-岫   念岸岸 train_DQN.ipynb       # Train DQN
-岫   念岸岸 train_A2C.ipynb       # Train A2C
-岫   念岸岸 play_DQN.ipynb        # Play with trained DQN
-岫   弩岸岸 play_A2C.ipynb        # Play with trained A2C
-念岸岸 report/
-岫   念岸岸 main.pdf
-岫   弩岸岸 images/
-岫       念岸岸 reward_dqn.png
-岫       弩岸岸 reward_a2c.png
-念岸岸 resource/
-岫   念岸岸 DQN.pdf
-岫   弩岸岸 A3C.pdf
-弩岸岸 task_description.pdf
+├── readme.md
+├── readme_en.md
+├── requirements.txt          # Install dependencies
+├── models/
+│   ├── dqn/                  # DQN checkpoint output
+│   └── a2c/                  # A2C checkpoint output
+├── scripts/
+│   ├── train_DQN.ipynb       # Train DQN
+│   ├── train_A2C.ipynb       # Train A2C
+│   ├── play_DQN.ipynb        # Play DQN results
+│   └── play_A2C.ipynb        # Play A2C results
+├── report/                   # Experiment report
+│   ├── main.pdf
+│   └── images/
+│       ├── reward_dqn.png
+│       └── reward_a2c.png
+└── resource/                 # Reference papers
+    ├── A3C.pdf
+    └── DQN.pdf
 ```
 
 ## Environment Setup
@@ -123,26 +122,6 @@ Recommended execution order:
 
 For full analysis, see `report/main.pdf`.
 
-## Troubleshooting
-
-1. Checkpoint not found
-
-- Make sure training has finished and checkpoint files are generated.
-- Verify folders: `models/dqn` and `models/a2c`.
-
-2. Notebook kernel is not detected
-
-- Ensure `ipykernel` is installed.
-- Register/select the correct kernel in your environment.
-
-3. OpenCV window does not show
-
-- In remote/no-GUI environments, OpenCV pop-up windows may not work.
-- Use saved videos in `play_demonstration/` instead.
-
-4. References do not appear in report
-
-- Compile report in this order: `xelatex -> biber -> xelatex -> xelatex`.
 
 ## References
 
