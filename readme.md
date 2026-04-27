@@ -1,5 +1,7 @@
 # Playing Atari 2600 with Reinforcement Learning
 
+Language: [English](readme_en.md) | 中文
+
 本项目复现并系统性对比了两种经典强化学习算法：
 - DQN (Deep Q-Network)
 - A2C (Advantage Actor-Critic)
